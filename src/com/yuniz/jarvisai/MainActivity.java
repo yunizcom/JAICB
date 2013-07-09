@@ -206,7 +206,7 @@ public class MainActivity extends Activity implements OnInitListener, OnUtteranc
             }
             else
             {
-            	tts.speak("ERROR : CONNECTION TO GOOGLE FAILED.", TextToSpeech.QUEUE_FLUSH, null);
+            	tts.speak("ERROR : CONNECTION TO JARVIS FAILED.", TextToSpeech.QUEUE_FLUSH, null);
             }
         }
 
@@ -228,7 +228,7 @@ public class MainActivity extends Activity implements OnInitListener, OnUtteranc
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			tts.speak("ERROR : CONNECTION TO SERVER DISCONNECTED.", TextToSpeech.QUEUE_FLUSH, null);
+			tts.speak("ERROR : CONNECTION TO JARVIS DISCONNECTED.", TextToSpeech.QUEUE_FLUSH, null);
 		}
 		//-------load JSON
 	}

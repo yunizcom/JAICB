@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="startChat"
-        android:text="Touch To Chat"
+        android:text="Tap To Chat"
         android:textColor="#ffffff"
         android:textSize="30dp" />
 
