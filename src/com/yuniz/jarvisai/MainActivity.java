@@ -224,7 +224,11 @@ public class MainActivity extends Activity implements OnInitListener, OnUtteranc
 		JSONObject json = getJSONfromURL(url, nameValuePairs);
 		try {
 			//Log.v("DEMO",json.getString("botsay"));
-			tts.speak(json.getString("botsay"), TextToSpeech.QUEUE_FLUSH, null);
+			if(json == null){
+				Toast.makeText(getApplicationContext(), "You need internet connection to continue." , Toast.LENGTH_LONG).show();
+			}else{
+				tts.speak(json.getString("botsay"), TextToSpeech.QUEUE_FLUSH, null);
+			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
