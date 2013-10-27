@@ -45,11 +45,19 @@ import android.util.TypedValue;
 import android.view.Display;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.View;
+import com.revmob.RevMob;
+import com.revmob.RevMobTestingMode;
+import com.revmob.ads.banner.RevMobBanner;
 
 public class MainActivity extends Activity implements OnInitListener, OnUtteranceCompletedListener {
 	
@@ -65,6 +73,8 @@ public class MainActivity extends Activity implements OnInitListener, OnUtteranc
 	private int SPEECH_REQUEST_CODE = 1234;
 	private TextToSpeech tts;
 
+	private RevMob revmob;
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +157,12 @@ public class MainActivity extends Activity implements OnInitListener, OnUtteranc
 		}
 		
 		tts = new TextToSpeech(this, this);
+		
+		/*----RevMob Ads----*/
+		revmob = RevMob.start(this);
+//revmob.setTestingMode(RevMobTestingMode.WITH_ADS);
+		revmob.showFullscreen(this);
+        /*----RevMob Ads----*/
 	}
 	
 	@Override
